@@ -9,7 +9,7 @@
 
 | Annotated Breadboard | Clean Build |
 |---|---|
-| ![Annotated]() | ![Build]() |
+| ![Annotated](Annotated-Breadboard.jpg) | ![Build](function-generator.jpg) |
 
 ---
 
