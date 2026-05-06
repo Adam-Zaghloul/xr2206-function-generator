@@ -39,26 +39,7 @@ The generator was built progressively across 8 lab sessions, each adding a new s
 
 ## Architecture
 
-```
-[120 Vac Transformer]
-        │
-[Bridge Rectifier + Filter Caps]
-        │
-[LM7812 +12V] ──── [LM741A Tracking Supply −12V] ──── [LM7805 +5V]
-        │
-[Frequency Range Select (C1–C4 via DPDT switches)]
-        │
-[XR-2206 IC1] ── f₀ = 1/(R×C) ── [RV5 1MΩ frequency dial]
-  │         │
-[Sine/Tri]  [Square (pin 11)]
-  │              │
-[LM741A Output Stage (gain −3)] ── [RV2 50kΩ amplitude]
-  │
-[DC Offset Stage (RV6)] ── [Attenuation Network −20/−40/−60 dB]
-  │                              │
-[Main Output]              [TTL Output: 2N3904 + 74LS00]
-```
-
+<img width="1577" height="847" alt="Bloc" src="https://github.com/user-attachments/assets/7dd425d0-4d65-4a68-82c0-6682605a5ea7" />
 ---
 
 ## Bill of Materials (Key Components)
