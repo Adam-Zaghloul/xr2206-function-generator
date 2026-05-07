@@ -10,7 +10,7 @@
 
 | Annotated Breadboard | Final Build |
 |---|---|
-| ![Annotated breadboard](docs/annotated-breadboard.jpg) | ![Final build](docs/function-generator.jpg) |
+| ![Annotated breadboard](docs/function-generator-annotated.jpg) | ![Final build](docs/function-generator.jpg) |
 
 ---
 
