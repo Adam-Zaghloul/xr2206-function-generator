@@ -10,7 +10,7 @@
 
 | Annotated Breadboard | Final Build |
 |---|---|
-| ![Annotated breadboard](docs/function-generator-annotated.jpg) | ![Final build](docs/function-generator.jpg) |
+| ![Annotated breadboard](function-generator-annotated.jpg) | ![Final build](function-generator.jpg) |
 
 ---
 
@@ -18,7 +18,7 @@
 
 | Full Schematic (DesignSpark PCB) | Block Diagram |
 |---|---|
-| ![Schematic](docs/schematic.png) | ![Block diagram](docs/block-diagram.png) |
+| ![Schematic](schematic.png) | ![Block diagram](block-diagram.png) |
 
 ---
 
