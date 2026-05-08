@@ -22,6 +22,12 @@
 
 ---
 
+## Demo
+
+[![Function Generator Demo](thumbnail.jpg)](https://youtu.be/lvYiISaXAnE)
+
+---
+
 ## Overview
 
 A fully functional benchtop function generator built around the **XR-2206 monolithic function generator IC** (EXAR). Designed from the datasheet, prototyped on breadboard across **8 progressive lab sessions**, and documented to industry standards — including a complete **Service Manual** (MS-GEN-001 v1.0) and **User Manual** (MU-GEN-001 v1.0), both authored in French and English.
