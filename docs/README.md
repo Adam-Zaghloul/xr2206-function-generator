@@ -25,7 +25,6 @@
 ## Demo
 
 [![Function Generator Demo](thumbnail.jpg)](https://youtu.be/lvYiISaXAnE)
-
 *Click the thumbnail to watch the demonstration Video*
 
 ---
