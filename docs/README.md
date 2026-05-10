@@ -25,15 +25,32 @@
 ## Demo
 
 [![Function Generator Demo](thumbnail.jpg)](https://youtu.be/lvYiISaXAnE)
-*Click the thumbnail to watch the demonstration Video*
+*Click the thumbnail to watch the demonstration video.*
 
 ---
 
 ## Overview
 
-A fully functional benchtop function generator built around the **XR-2206 monolithic function generator IC** (EXAR). Designed from the datasheet, prototyped on breadboard across **8 progressive lab sessions**, and documented to industry standards — including a complete **Service Manual** (MS-GEN-001 v1.0) and **User Manual** (MU-GEN-001 v1.0), both authored in French and English.
+I designed and built a fully functional benchtop function generator around the **XR-2206 monolithic function generator IC** (EXAR). I derived all component values from the datasheet, prototyped the circuit on breadboard across **8 progressive lab sessions**, and validated each sub-system independently with an oscilloscope and DMM before integrating the full circuit.
 
-Each of the 6 sub-systems was built and validated independently with an oscilloscope and DMM before integration into the full circuit.
+I also authored a complete **Service Manual** (MS-GEN-001 v1.0) and **User Manual** (MU-GEN-001 v1.0), both written in French and English to industry documentation standards.
+
+---
+
+## What I Built
+
+- **Designed** the full circuit from the XR-2206 datasheet — derived timing component values for all four frequency decades
+- **Built** the power supply section: transformer, full-wave rectifier, bulk filter caps, LM7812 (+12 V), LM7805 (+5 V), and LM741A tracking supply (−12 V)
+- **Trimmed** RV100 until |+12 V| = |−12 V| within ±20 mV using a DMM
+- **Wired** the XR-2206 core with 4 frequency range capacitors (C1–C4) switched via DPDT buttons
+- **Adjusted** RV1 (RA) and RV3 (RB) alternately at 1 kHz until sine THD < 0.5 % — verified on oscilloscope
+- **Built** the output stage: LM741A inverting amplifier (gain = −3), RV2 amplitude control, and DPDT DC offset switch
+- **Assembled** the resistive attenuation network (R100–R106) providing −20 dB, −40 dB, and −60 dB at ~50 Ω constant output impedance
+- **Built** the TTL output stage: 2N3904 saturation switch + two paralleled 74LS00 NAND gates
+- **Measured** maximum output amplitudes: Sine 21 Vpp · Triangle 22.5 Vpp · Square 23 Vpp
+- **Verified** all four frequency ranges with an oscilloscope — confirmed coverage from ~0 Hz to ~100 kHz
+- **Troubleshot** and resolved sine distortion, supply asymmetry, and TTL phase inversion issues
+- **Documented** the full project in a service manual, user manual, and design report
 
 ---
 
@@ -65,7 +82,6 @@ Each of the 6 sub-systems was built and validated independently with an oscillos
 ## System Architecture
 
 ```
-
                    ┌─────────────────────┐
                    │    POWER SUPPLY     │
                    │  120Vac → ±12V/+5V  │
@@ -95,7 +111,6 @@ Each of the 6 sub-systems was built and validated independently with an oscillos
      └─────────┬──────────┘
                │
             OUTPUT
-
 ```
 
 ---
@@ -138,8 +153,8 @@ f₀ = 1 / (R × C)
 
 > Activate **one** range button at a time.
 
-**Sine distortion trim:**  
-Alternate **RV1 (RA = 1 MΩ)** and **RV3 (RB = 25 kΩ)** at 1 kHz until THD < 0.5 %.  
+**Sine distortion trim:**
+Alternate **RV1 (RA = 1 MΩ)** and **RV3 (RB = 25 kΩ)** at 1 kHz until THD < 0.5 %.
 **RV4 (1 kΩ, R_shape)** fine-trims the sine shaping network.
 
 **Measured signal levels at XR-2206 pin 2:**
@@ -302,7 +317,7 @@ Resistive ladder (R100–R106) maintains **~50 Ω output impedance** at all sett
 
 ## Calibration
 
->  **Perform calibration with circuit powered**.
+> ⚠️ Calibration is performed with the circuit **live**. Never touch components with bare hands.
 
 ### Frequency (RV5)
 1. Connect oscilloscope to main output; activate one range
@@ -395,8 +410,8 @@ Resistive ladder (R100–R106) maintains **~50 Ω output impedance** at all sett
 | Service Manual | MS-GEN-001 v1.0 | FR / EN |
 | User Manual | MU-GEN-001 v1.0 | FR / EN |
 | Design Report | 027930 TEC | FR |
-| Schematic (DesignSpark PCB) | — | `docs/schematic.png` |
-| Block Diagram | — | `docs/block-diagram.png` |
+| Schematic (DesignSpark PCB) | — | `schematic.png` |
+| Block Diagram | — | `block-diagram.png` |
 
 ---
 
